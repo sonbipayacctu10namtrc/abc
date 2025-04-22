@@ -82,10 +82,6 @@ def start_ai_process() -> subprocess.Popen:
         text=True
     )
 
-@app.get("/api/test")
-async def health_check():
-    return {"status": "ok", "message": "running"}
-
 @app.post("/api/connect4-move")
 async def make_move(game_state: Connect4State) -> AIMove:
     try:
